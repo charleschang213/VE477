@@ -1,6 +1,6 @@
 #include "kruskal.h"
 edge *kruskal(graph *x){
-    qsort(x->edg,x->edges,12,edge_cmp);
+    qsort(x->edg,x->edges,sizeof(edge),edge_cmp);
     edge *ans = (edge*)malloc((x->size-1)*sizeof(edge));
     ufs newset;
     ufs_init(&newset,x->size);

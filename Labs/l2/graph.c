@@ -10,6 +10,7 @@ int edge_cmp(const void *a,const void *b){
 
 void graph_init(graph *x,int n,int e){
     x->size = n;
+    x->edges = e;
     x->node = (int*)malloc(n*sizeof(int));
     x->edg = (edge*)malloc(e*sizeof(edge));
     for (int i=0;i<n;i++) 
