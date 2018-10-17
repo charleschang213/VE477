@@ -48,7 +48,16 @@ And the result is shown in the graph below:
     \includegraphics[scale=0.5]{1.png}
 \end{figure}
 
-It is the time to perform 50 same algorithm repeatedly. It can be seen that the proper algorithm is much more time-costing than the two other algorithms. It is obvious since the correct algorithm has a $O(len(s)\times n)$ time complexity where the other two only need $O(nlogn)$. 
+It is the time to perform 50 same algorithm repeatedly. It can be seen that the proper algorithm is much more time-costing than the two other algorithms. It is obvious since the correct algorithm has a $O(len(s)\times n)$ time complexity. This statement is also proved by the comparison with the table.
+
+The following graph shows the time cost of big and small-first algorithms more specifically. These are time cost of performing 1000 same operations.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{2.png}
+\end{figure}
+
+From the table it can be seen that they should be in $O(len(S)\times loglen(S))$ complexity, which matches the assumption.
 
 Because in some cases the big-first and small-first algorithm could also give us correct or nearly correct solutions, we can sometime use these two when time efficiency is highly needed.
 \end{document}

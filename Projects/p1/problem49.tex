@@ -19,47 +19,154 @@
 % things can be added below
 %
 
-\def\pbname{Problem name} %change this, do not use any number, just the name
+\def\pbname{Matrix inversion} %change this, do not use any number, just the name
 
 \section{\pbname} 
 
 % only for overview, so short description (no more than 1-2 lines)
 \begin{overview}
-\item [Algorithm:] name~(algo.~\ref{problemnb}) 
+\item [Algorithm:] Cholesky Algorithm~(algo.~\ref{problem49a}), Levinson-Durbin Algorithm~(algo.~\ref{problem49b})
 	% - replace nb with problem number (e.g. problem101)
 	% -	must match the label of the algorithm 
 	% - for more than one algo list each of them and use problem101a, problem101b, problem101c etc.
-\item [Input:] what inputs are expected
-\item [Complexity:] complexity of the algorithm, e.g. $\mathcal{O}(n)$
-\item [Data structure compatibility:] data structures that can be used with the algorithm; N/A if unrelated
-\item [Common applications:] most common fields where this algorithm is used
+\item [Input:] A square matrix $A$
+\item [Complexity:] $\mathcal{O}(n^3)$
+\item [Data structure compatibility:] N/A
+\item [Common applications:] Finding inverse, solving linear systems
 \end{overview}
 
 
 
 \begin{problem}{\pbname}
-	Precise and concise formal definition of the problem.
+	Finding the inverse of a matrix
 \end{problem}
 
 \subsection*{Description}
-Detailed description of the problem; More detailed information on the input and complexity; more applications with details on how they relate to each other (if this is the case).
+Two matrices are named inverse to each other if their product is the identity matrix of their size. That is to say $$AA^{-1}=I_n$$
+
+Finding the inverse of a matrix is very important in linear algebra and real life practices, so a good inversion method is necessary. The most intuitive method must be euqation solving, which means building a linear system with regard to vectors and solve it using elimination and substitution. But this can be time-consuming.
+
+However, based on some special features of matrix, the time of calculating the inverse could be reduced. 
+
+Cholesky algorithm is a inverse finding algorithm for Hermittian matrices. A $n\times n$ matrix $A$ is said to be Hermittian if it is conjugate symmetric. In another word $$a_{ij} = \bar{a_{ji}} \text{ for } 1\leq i,j \leq n$$
+
+And if the matrix is a real matrix, being Hermittian is equivalent to being symmetric. 
+
+Cholesky algorithm is based on the Cholesky decomposition of a Hermittian. Cholesky decomposition is decomposing a matrix into the product of an upper triangular matrix with its conjugate transpose. In a word, it is like $$A = R^*R$$ where $R$ is upper triangular.
+
+After decomposing, the original equation can be divided into two equation systems . $$R^*RA^{-1}=I_n \Rightarrow \begin{cases}R^*y &= I_n\\RA^{-1}&=y\end{cases}$$
+
+Solving this equation system is simpler since the coefficient matrices are now tiangular matrices and consequently methods like forward/backward substitution can be directly applied. What's more, based on the Hermittian property the amount of operations can be reduced by nearly half. The decomposition part requires $\frac{n^3}{6}$ operations and the back substitution is a $\mathcal{O}(n^2)$ process, so the complexity for Cholesky algorithm is $\mathcal{O}(n^3)$
+
+Another algorithm is Levinson-Durbin algorithm. This algorithm is designed for a special type of matrices called symmetric Toeplitz matrices. Toeplitz matrices are suqare matrices who have same entries on every diagonals(not only main diagonal), which is to say $$A_{i,j}=a_{i-j} \text{ for } 1\leq i,j \leq n$$ where $\{a_k\}$ is a constant sequence whose index ranges from $-(n-1)$ to $(n-1)$
+
+Levinson-Durbin algorithm uses the idea of recursion. Using recursive call, it first finds the inverse of the $(n-1)\times (n-1)$ matrix on the left-top of $A$(denoted as $A_{n-1}$), denoted as $A_{n-1}^{-1}$. Then it adds a row of $0$ at the the bottom of $A_{n-1}^{-1}$. 
+
+It is clear that if you multiply the result of such operation with $A$, the result will only have differences with the first $(n-1)$ columns in $I_n$ on the last row.
+
+The next step is to find the backward vector of $A$, which is a vector $b_n$ such that (here $e_n$ stands for the $n_{th}$ column in the identity matrix $I_n$) $$Ab_n = e_n$$
+
+After finding this backward vector, weight it and add it to columns in $A_{n-1}^{-1}$ to eliminate the errors in the last row and the append it to the right of $A_{n-1}^{-1}$, you will get $A^{-1}$.
+
+The process of finding $b_n$ is also recursive. And here another term called forward vector needs to be introduced, which is a vector $f_n$ which satisfies $$Af_n=e_1$$
+
+Because the matrices studied are symmetric Toeplitz matrices, $f_n$ is just the reverse of $b_n$, which means $$f_n[i]=b_n[n-i+1] \text{ for } 1\leq i \leq n$$
+
+Here is the process of finding $b_n$. First use recursive call to find $b_{n-1}$, and generate $f_{n-1}$ by reversing $b_{n-1}$. Append a 0 at the end of $f_{n-1}$ and the beginning of $b_{n-1}$, then the product of $A$ and the new two vectors(denoted as $f_{n}^{'},b_{n}^{'}$) will only have difference with $e_1$ and $e_n$ on the last/first row respectively. 
+
+Denote the deviations as $\delta_n,\delta_1$, it can be seen that using linear combinations of these two vectors can eliminate the deviations and generate $b_n$ $$b_n = \frac{1}{1-\delta_1\delta_n}b_{n}^{'}-\frac{\delta_1}{1-\delta_1\delta_n}f_{n}^{'}$$
+
+Levinson recursion originally serves to solve linear systems, and in that case it is of $\mathcal{O}(n^2)$ complexity. Because here the constant terms are vectors, the complexity will be $\mathcal{O}(n^3)$
 
 % add comment in the pseudocode: \cmt{comment}
 % define a function name: \SetKwFunction{shortname}{Name of the function}
 % use the defined function: \shortname{$variables$}
 % use the keyword ``function'': \Fn{function name}, e.g. \Fn{\shortname{$var$}}
-\begin{Algorithm}[name\label{problemnb}]
+\begin{Algorithm}[Cholesky Algorithm\label{problem49a}][H]
 	% - replace nb with problem number (e.g. problem101)
 	% -	must match the reference in the overview
 	% - when writing more than one algo use problem101a, problem101b, problem101c etc.
-	%\SetKwFunction{myfunction}{MyFunction}	
-	\Input{}
-	\Output{}
-	%	\Fn{\myfunction{$a,b$}}{
-	%	}
+	\SetKwFunction{chol}{Cholesky}	
+	\Input{A Hermittian square matrix $A$}
+	\Output{The inverse of $A$}
+		\Fn{\chol{$A$}}{
+			n $\leftarrow$ size of A\;
+			R $\leftarrow$ size-n square matrix filled with zeros\;
+			\For {i $\leftarrow$ 1 \KwTo n}{
+				\For {j$\leftarrow$ i \KwTo n}{
+					\For{k$\leftarrow$ 1 \KwTo i-1}{
+						R[i,j] $\leftarrow R[i,j]+R[k,i]^*R[k,j]$\;
+					}
+					\uIf{i$\neq$j}{
+						R[i,j] $\leftarrow \frac{A[i,j]-R[i,j]}{R[i,i]}$ \;
+					}
+					\Else{
+						R[i,j] $\leftarrow \sqrt{A[i,j]-R[i,j]}$ \;
+					}
+				}
+			}
+			X $\leftarrow$ size-n square matrix filled with zeros\;
+			\For {i $\leftarrow$ n \KwTo 1}{
+				\For {j$\leftarrow$ i \KwTo n}{
+					X[i,j] $\leftarrow \sum_{k=i+1}^{n}R[i,k]X[k,j]$\;
+					\uIf{i=j}{
+						$X[i,j] \leftarrow \frac{\frac{1}{R[i,j]}-X[i,j]}{R[i,j]}$\;
+					}
+					\Else {
+						$X[i,j] \leftarrow \frac{0-X[i,j]}{R[i,j]}$\;
+						$X[j,i] \leftarrow X[i,j]^*$\;
+					} 
+				}
+			}
+			\Ret{X}
+		}
 	\BlankLine
 
-	\Ret
+	\Ret{\chol{$A$}}
+
+\end{Algorithm}
+
+\begin{Algorithm}[Levinson-Durbin Algorithm\label{problem49b}][H]
+	% - replace nb with problem number (e.g. problem101)
+	% -	must match the reference in the overview
+	% - when writing more than one algo use problem101a, problem101b, problem101c etc.
+	\SetKwFunction{ld}{LevinsonDurbin}
+	\SetKwFunction{bv}{BackwardVector}	
+	\Input{A Symmetric Toeplitz matrix $A$}
+	\Output{The inverse of $A$}
+	\Fn{\ld{$A$}}{
+		n $\leftarrow$ size of A\;
+		\uIf{n=1}{
+			\Ret{$[\frac{1}{A[1,1]}]$}
+		}
+		B $\leftarrow$ \ld{$A[1:n-1,1:n-1]$}\;
+		Append a row of zeros to the bottom of $B$\;
+		Append \bv{$A$} to the right of $B$\;
+		\For {i $\leftarrow$ 1 \KwTo n-1}{
+			d $\leftarrow \sum_{k=1}^{n}A[n,k]B[k,i]$\;
+			\For {j $\leftarrow$ 1 \KwTo n}{
+				$B[j,i] \leftarrow B[j,i]-d\times B[j,n]$\;
+			}
+		}
+		\Ret{$B$}
+	}
+	\BlankLine
+	\Fn{\bv{$A$}}{
+		n $\leftarrow$ size of A\;
+		\uIf{n=1}{
+			\Ret{$[\frac{1}{A[1,1]}]$}
+		}
+		b $\leftarrow$ \bv{$A[1:n-1,1:n-1]$}\;
+		Append a zero at the head of $b$\;
+		f $\leftarrow$ b reversed\;
+		$dn \leftarrow \sum_{k=1}^n A[n,k]f[k]$\;
+		$d1 \leftarrow \sum_{k=1}^n A[1,k]b[k]$\;
+		$b \leftarrow \frac{1}{1-d1\times dn}b-\frac{d1}{1-d1\times dn}f$ \;
+		\Ret{$b$}
+	}
+	\BlankLine
+
+	\Ret{\ld{$A$}}
 
 \end{Algorithm}
 
@@ -70,10 +177,9 @@ Detailed description of the problem; More detailed information on the input and 
 % if available include links to programs/code solving the problem
 
 \begin{itemize}\itemsep .125cm
-	\item If available provide URLs, e.g.~\url{http://mywebsite.org}
-	\item Wikipedia is not acceptable if this is the unique reference
-	\item Reference some books, or published articles
-	\item Use reliable websites (no blog allowed) that are not likely to disappear any time soon
+	\item Aravindh Krishnamoorthy, Deepak Menon (2013),  "Matrix Inversion Using Cholesky Decomposition"
+	\item Trench, W. F. (1964). "An algorithm for the inversion of finite Toeplitz matrices." J. Soc. Indust. Appl. Math., v. 12, pp. 515–522.
+	\item Musicus, B. R. (1988). "Levinson and Fast Choleski Algorithms for Toeplitz and Almost Toeplitz Matrices." RLE TR No. 538, MIT
 \end{itemize}
 
 \ifx\onefile\undefined

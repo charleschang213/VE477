@@ -1,0 +1,121 @@
+\documentclass{beamer}
+\usepackage{bookmark}
+\usepackage{beamerthemeBerkeley}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=blue,citecolor=blue}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usecolortheme{dove}
+\lstset{
+numbers=left,
+showspaces=false,
+showstringspaces=false,
+xleftmargin=.05\textwidth,
+frame=shadowbox,
+commentstyle=\color{red!80!green!80!blue!80},
+}
+\title{Matrix Inversion}
+\author{Group 23}
+\institute{UM-SJTU Joint Institute}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+
+\begin{frame}
+	\section{Introduction}
+	\frametitle{Matrix Inversion}
+	\begin{block}{Definition}
+		The {\bf  inverse} of a $n\times n$ matrix ${\bf A}$, denoted as ${\bf A^{-1}}$, is a matrix that satisfies the expression $${\bf AA^{-1}=A^{-1}A=I_n}$$
+
+		Where ${\bf I_n}$ is a $n\times n$ matrix with $1$ on its diagonal and $0$ otherwise.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Naive Matrix Inversion Method}
+	The naive method to solve matrix inversion is to treat the expression ${\bf AA^{-1}=I_n}$ as a linear equation system whose unkonwns are $1\times n$ vectors (rows of ${\bf A^{-1}}$)
+
+	\vskip 2em
+	Solving this equation is of $\mathcal{O}(n^4)$ complexity (Gaussian Elimination)
+\end{frame}
+
+\begin{frame}
+	\section{Algorithm}
+	\frametitle{Two Matrix Inversion Algorithms}
+	\begin{itemize}
+		\item Cholesky Decomposition 
+		\begin{itemize}
+			\item Complexity: $\mathcal{O}(n^3)$
+			\item Application: Hermitian matrices
+		\end{itemize}
+		\item Levinson-Durbin Recursion
+		\begin{itemize}
+			\item Complexity: $\mathcal{O}(n^3)$
+			\item Application: Symmetric Toeplitz matrices
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\subsection{Cholesky Decomposition}
+	\frametitle{Cholesky Decomposition}
+	A symmetric matrix ${\bf A}$ can be represented as product of two transpose triangular matrix as the following $${\bf A = U^TU}$$ where ${\bf U}$ is an $n\times n$ upper triangular matrix.
+
+	{\bf Note: }The implementation of finding ${\bf U}$ for a certain ${\bf A}$ can be in-place, so that no extra space is needed.
+	
+\end{frame}
+
+\begin{frame}
+	Based on the Cholesky decomposition, the euqation can be transformed as $${\bf U^TUA^{-1}=I_n \Rightarrow \begin{cases}\bf U^TB &= \bf I_n\\\bf UA^{-1}&=\bf B\end{cases}}$$ and solving these two equations is simple because back/forward substitution can be directly applied. 
+		
+	What's more, the symmetric property of ${\bf A}$ will also cause a reduction in the calculation.
+\end{frame}
+
+\begin{frame}
+	\subsection{Levinson-Durbin Recursion}
+	\frametitle{Levinson-Durbin Recursion}
+The first step of Levinson Durbin is to partition the matrix into blocks $$ {\bf A = \left[\begin{matrix}\bf B_{(n-1)\times(n-1)} & \bf C_{(n-1)\times 1} \\\bf D_{1\times (n-1)} & \bf E_{1\times 1}\end{matrix}\right]}$$
+
+The algorithm will first find a inversion of ${\bf B}$, denoted as ${\bf B^{-1}}$ using recursive call and also find a {\bf backward vector} of ${\bf A}$, denoted as ${\bf u}$ which satisfies $${\bf Au} = \left[\begin{matrix} 0\\0\\ \vdots \\0\\1 \end{matrix}\right]$$
+\end{frame}
+
+\begin{frame}
+Append a row of zeros to the bottom of ${\bf B^{-1}}$, and it can be seen that $$\left[\begin{matrix}\bf B_{(n-1)\times(n-1)} & \bf C_{(n-1)\times 1} \\\bf D_{1\times (n-1)} & \bf E_{1\times 1}\end{matrix}\right]\left[\begin{matrix}\bf B^{-1}_{(n-1)\times (n-1)} \\ \bf 0_{1\times (n-1)} \end{matrix}\right] = \left[\begin{matrix}\bf I_{(n-1)} \\ \bf error_{1\times (n-1)} \end{matrix}\right]$$
+
+Then what should we do is add scaled $\bf u$ on the columns of the new matrix to eliminate the errors. At last append $\bf u$ to the right, then ${\bf A^{-1}}$ is calculated.
+\end{frame}
+
+\begin{frame}
+	\section{Implementation}
+	\frametitle{Python specifics included to improve coding efficiency}
+	The basic object used is {\bf numpy.mat} to store the matrices. There are several reasons 
+
+	\begin{itemize}
+		\item It is more convenient for storing and generating test matrices using numpy commands
+		\item Many loops and case statement in the implementation can be substituted by matrices operations (row operation, matrix partition, matrix multiplicaiton, etc.), and numpy.mat has adequette implementations of these operations.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\section{References}
+	\frametitle{References}
+	\begin{itemize}
+		\item Aravindh Krishnamoorthy, Deepak Menon (2013),  "Matrix Inversion Using Cholesky Decomposition"
+		\item Trench, W. F. (1964). "An algorithm for the inversion of finite Toeplitz matrices." J. Soc. Indust. Appl. Math., v. 12, pp. 515–522.
+		\item Musicus, B. R. (1988). "Levinson and Fast Choleski Algorithms for Toeplitz and Almost Toeplitz Matrices." RLE TR No. 538, MIT
+	\end{itemize}
+\end{frame}
+
+\end{document}
