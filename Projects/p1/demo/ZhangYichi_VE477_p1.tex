@@ -58,7 +58,7 @@ commentstyle=\color{red!80!green!80!blue!80},
 		\item Cholesky Decomposition 
 		\begin{itemize}
 			\item Complexity: $\mathcal{O}(n^3)$
-			\item Application: Hermitian matrices
+			\item Application: Positive Definite Hermitian matrices
 		\end{itemize}
 		\item Levinson-Durbin Recursion
 		\begin{itemize}
@@ -71,7 +71,7 @@ commentstyle=\color{red!80!green!80!blue!80},
 \begin{frame}
 	\subsection{Cholesky Decomposition}
 	\frametitle{Cholesky Decomposition}
-	A symmetric matrix ${\bf A}$ can be represented as product of two transpose triangular matrix as the following $${\bf A = U^TU}$$ where ${\bf U}$ is an $n\times n$ upper triangular matrix.
+	A positive definite symmetric matrix ${\bf A}$ can be represented as product of two transpose triangular matrix as the following $${\bf A = U^TU}$$ where ${\bf U}$ is an $n\times n$ upper triangular matrix.
 
 	{\bf Note: }The implementation of finding ${\bf U}$ for a certain ${\bf A}$ can be in-place, so that no extra space is needed.
 	
