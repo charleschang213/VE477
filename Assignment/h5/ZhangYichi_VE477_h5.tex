@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{bookmark}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}  
+\usepackage{algorithm}  
+\usepackage{algorithmicx}  
+\usepackage{algpseudocode}
+\pagestyle{headings}
+\markright{\large Zhang Yichi 516370910260\hfill VE477 h5\hfill}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  
+\renewcommand{\algorithmicensure}{\textbf{Output:}}  
+
+\begin{document}
+{\noindent {\bf Ex 1.} 2. Of course not a good solution. If the set is ordered such as $\{1,2,3,4,5,6\}$, then the latter groups are guaranteed to be much larger than the former group, thus not certain to get a minimum max sum.\\
+
+{\noindent 3. You can divide the problem into two steps: Select the $k_{th}$ group and decide the cost of partitioning the former elements into $(k-1)$ groups. Take all possible values of $n_k$ and use $M(n-n_k,k-1)$ to represent the cost of partitioning the previous $(k-1)$ groups, then the task is to find the minimum of the larger one of $M(n-n_k,k-1)$ and the sum of the last group.\\}
+
+{\noindent 4. The complxity should be $\mathcal{O}(kn^3)$\\}
+
+{\noindent 5. The result of $M(n',k')$ can be stored in a matrix to prevent redundant accesseing.\\}
+
+{\noindent 6. The pseudocode is shown below.}
+ 
+    \begin{algorithm}[H]
+        \caption{Linear Partition}  
+        \begin{algorithmic}[1]   
+            \Require  An array $A$ os size $n$, number of partition $k$
+            \Ensure The minimum cost of partitioning
+            \State $M\gets \text{a }n\times k\text{ matrix}$
+            \State $M[1,1]\gets A[1]$
+            \For {$i\gets 2 \to n$}
+                \State $M[i,1]\gets A[i]+M[i-1,1]$
+            \EndFor
+            \For {$i\gets 1 \to k$}
+                \State $M[1,i]\gets 1$
+            \EndFor
+            \For {$i\gets 2\to n$}
+                \For{$j\gets 2\to k$}
+                    \State $M[i,j]\gets \infty$
+                    \For {$m\gets 1\to n-1$}
+                        \State $s\gets max\{M[m,j-1],M[i,1]-M[m,1]\}$
+                        \State $M[i,j]\gets min\{M[i,j],s\}$
+                    \EndFor
+                \EndFor
+            \EndFor
+            \State \Return $M[n,k]$
+            
+        \end{algorithmic}  
+    \end{algorithm}
+
+{\noindent 7. For n=1 or k=1, the boundary values are sure to be true. And for the other cases, the recurrance relation is also correct. And as changing the latter result does not affect the previous result, the algorithm is correct.\\}
+
+{\noindent 8. From the for loop it can be seen that the operation and comparison will be repeated for $kn(n-1)$ times, and so the complexity is $\mathcal{O}(kn^2)$\\}
+
+{\noindent 9. Construct another matrix $B$, in which $B[i,j]$ indicates the number of elements for previous $j-1$ group when we want to partition $i$ elements into $j$ groups, and update it together with $M$. Then use backward search to find the specific partition.}
+
+\hrule
+
+\vskip 2em
+
+{\noindent {\bf Ex 2.} Calculate $n=B.getrand()*5+B.getrand()$ until $n<24$, then use $n\%8$ as the random number. 
+
+There is no restriction on n.\\
+
+\hrule
+\vskip 2em
+
+{\noindent {\bf Ex 3. }1.  Use an array $dis[|G.V|]$, in which $dis[i]$ stores the minimum cost among any path whose destination is the $i_{th}$ vertices. Initialize the array into a zero array, then repeat the process for $|G.V|$ times: traverse all edges $e$ in $G.E$, update $dis[e.dst]$ into $dis[e.src]+e.weight$ if the latter is smaller. If in the $|G.V|_{th}$ loop there is still element updated, then it means that there is a negative cycle.\\
+
+\hrule 
+\vskip 2em
+
+{\noindent {\bf Ex 5. } 2. The pseudo code is shown below
+
+\begin{algorithm}[H]
+    \caption{Wifi Problem}  
+    \begin{algorithmic}[1] 
+        \Require Array $X,Y$ representing coordinates of $k$ hotspots, array $R,L$ representing available range and maximum load of the hotspots, and $X_1,Y_1$ representing coordinates of $n$ users
+        \Ensure Whether all users can get connected to wifi
+        \State $G\gets \text{a graph with empty vertices and edges}$
+        \State $G.V\gets G.V+\{s,t\}$
+        \For {$i\gets 1\to n$}
+            \State $G.V\gets G.V+\{u_i\}$
+            \State $G.E\gets G.E+\text{an edge from $s$ to $u_i$ with capacity $1$}$
+        \EndFor
+        \For {$i\gets 1\to k$}
+            \State $G.V\gets G.V+\{h_i\}$
+            \State $G.E\gets G.E+\text{an edge from $h_i$ to $t$ with capacity $L[i]$}$
+        \EndFor
+        \For {$i\gets 1\to n$}
+        \For {$j\gets 1\to k$}
+        \If {$(X[j]-X_1[i])^2+(Y[j]-Y_1[i])^2<r^2$}
+            \State $G.E\gets G.E+\text{an edge from $u_i$ to $h_j$ with capacity $1$}$
+        \EndIf
+        \EndFor
+        \EndFor
+        \State $f\gets Ford-Fulkerson(G)$
+        \State \Return $f==n$
+        
+    \end{algorithmic}  
+\end{algorithm}
+
+The algorithm is correct since the capacity from $s$ to $u_i$ restricts everyone can only connect to one wifi,and those from $u_i$ to $h_j$ restricts that those who are in the range can connect a certain hotspot, and capacities from $h_j$ to $t$ restricts every hotspot's maximum load, so the maximum flow in this graph should be the maximum number of people that can connect to the wifi.
+
+Since the graph initialization needs $\mathcal{O}(kn)$ time and maximum flow needs $\mathcal{O}(VE^2)=\mathcal{O}((k+n+2)(kn+k+n)^2)=\mathcal{O}((k+n)k^2n^2)$ complexity, so the total complexity should be $\mathcal{O}((k+n)k^2n^2)$
+
+\end{document}
