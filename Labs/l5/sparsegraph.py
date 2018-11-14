@@ -1,11 +1,15 @@
 import fibheap as fh
 
-class densegraph:
+class sparsegraph:
     vertex = 0
     edge = []
     weight = []
     vers = []
     def __init__(self,size):
+        self.vertex = 0
+        self.edge = []
+        self.weight = []
+        self.vers = []
         self.vertex = size
         self.weight = [([0]*size) for i in range(size)]
         for i in range(size):
@@ -107,26 +111,32 @@ class densegraph:
         return ans
                         
 def main():
-    a = densegraph(6)
-    a.SetVertexValue(0,'s')
-    a.SetVertexValue(1,'b')
-    a.SetVertexValue(2,'c')
-    a.SetVertexValue(3,'d')
-    a.SetVertexValue(4,'e')
-    a.SetVertexValue(5,'t')
-    a.AddEdge(0,1,4)
-    a.AddEdge(0,2,2)
-    a.AddEdge(1,2,1)
-    a.AddEdge(1,3,5)
-    a.AddEdge(2,3,8)
-    a.AddEdge(2,4,10)
-    a.AddEdge(3,4,2)
-    a.AddEdge(3,5,6)
-    a.AddEdge(4,5,3)
-    print("BellMan-Ford")
-    print(a.BF(0,5))
+    a = sparsegraph(8)
+    for i in range(8):
+        a.SetVertexValue(i,i)
+    a.AddEdge(0,1,3);a.AddEdge(0,2,5);a.AddEdge(0,4,6)
+    a.AddEdge(1,3,9);a.AddEdge(1,5,2);a.AddEdge(1,6,7)
+    a.AddEdge(2,5,9);a.AddEdge(2,4,3);a.AddEdge(2,6,8)
+    a.AddEdge(3,6,9);a.AddEdge(3,5,5)
+    a.AddEdge(4,6,4);a.AddEdge(4,7,2)
+    a.AddEdge(5,6,2);a.AddEdge(5,7,2)
+    a.AddEdge(6,7,1)
+    b = sparsegraph(6)
+    b.SetVertexValue(0,'s')
+    b.SetVertexValue(1,'b')
+    b.SetVertexValue(2,'c')
+    b.SetVertexValue(3,'d')
+    b.SetVertexValue(4,'e')
+    b.SetVertexValue(5,'t')
+    b.AddEdge(0,1,4,True);b.AddEdge(0,2,2,True)
+    b.AddEdge(1,3,5,True)
+    b.AddEdge(2,3,-3,True);b.AddEdge(2,4,10,True);b.AddEdge(2,5,8,True)
+    b.AddEdge(3,4,2,True);b.AddEdge(3,5,-1,True)
+    b.AddEdge(4,5,3,True)
     print("Dijkstra")
-    print(a.Dijkstra(0,5))
+    print(a.Dijkstra(0,7))
+    print("Bellman-Ford")
+    print(b.BF(0,5))
 
 if __name__ == '__main__':
     main()

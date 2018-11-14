@@ -1,43 +1,66 @@
 import fibheap as fh
 
-class densegraph:
+class sparsegraph:
     vertex = 0
     edge = []
+    weight = []
     vers = []
     def __init__(self,size):
-        vertex = 0
-        edge = []
-        vers = []
+        self.vertex = 0
+        self.edge = []
+        self.weight = []
+        self.vers = []
         self.vertex = size
-        self.edge = [([0]*size) for i in range(size)]
+        self.weight = [([0]*size) for i in range(size)]
+        for i in range(size):
+            self.edge.append([])
         self.vers = [0]*size
     def RemoveEdge(self,s,t,directed=False):
-        self.edge[s][t] = 0
+        self.weight[s][t] = 0
+        self.edge[s].remove(t)
         if directed==False:
-            self.edge[t][s] = 0
+            self.weight[t][s] = 0
+            self.edge[t].remove(s)
+    def AddFlow(self,s,t,w):
+        self.edge[s].append(t)
+        self.edge[t].append(s)
+        self.weight[s][t]=w
     def AddEdge(self,s,t,w,directed=False):
-        self.edge[s][t] = w
+        self.edge[s].append(t)
+        self.weight[s][t] = w
         if directed==False:
-            self.edge[t][s] = w
+            self.edge[t].append(s)
+            self.weight[t][s] = w
     def AddVertex(self,w=0):
-        for i in range(self.vertex):
-            self.edge[i] = self.edge[i]+[0]
-        self.edge = self.edge+[[0]*(self.vertex+1)]
+        self.edge.append([])
         self.vertex = self.vertex+1
         self.vers = self.vers+[w]
     def RemoveVertex(self,v):
-        self.edge = list(map(lambda x:x[0:v]+x[v+1:],self.edge))
-        self.edge = self.edge[0:v]+self.edge[v+1:]
+        self.weight = list(map(lambda x:x[0:v]+x[v+1:],self.edge))
+        self.weight = self.edge[0:v]+self.edge[v+1:]
+        for i in range(self.vertex):
+            try:
+                self.edge[i].remove(v)
+            except ValueError:
+                pass
+            for j in range(len(self.edge[i])):
+                if self.edge[i][j]>v:
+                    self.edge[i][j] = self.edge[i][j]-1
         self.vers = self.vers[0:v]+self.vers[v+1,:]
         self.vertex = self.vertex-1
     def IsAdjacent(self,s,t):
-        return self.edge[s][t]!=0
+        try:
+            self.edge[s].index(t)
+        except ValueError:
+            return False
+        else:
+            return True
     def GetEdgeWeight(self,s,t):
-        return self.edge[s][t]
+        return self.weight[s][t]
     def SetEdgeWeight(self,s,t,w,directed = False):
-        self.edge[s][t] = w
+        self.weight[s][t] = w
         if directed==False:
-            self.edge[t][s] = w
+            self.weight[t][s] = w
     def GetVertexValue(self,v):
         return self.vers[v]
     def SetVertexValue(self,v,w):
@@ -48,12 +71,11 @@ class densegraph:
         dist[s] = 0
         for i in range(self.vertex-1):
             for j in range(self.vertex):
-                for k in range(self.vertex):
-                    if self.IsAdjacent(j,k):
-                        tmp = dist[j]+self.GetEdgeWeight(j,k)
-                        if tmp < dist[k]:
-                            dist[k] = tmp
-                            pre[k] = j
+                for k in self.edge[j]:
+                    tmp = dist[j]+self.GetEdgeWeight(j,k)
+                    if tmp < dist[k]:
+                        dist[k] = tmp
+                        pre[k] = j
         print("The shortest length is",dist[t])
         flag = t
         ans = []
@@ -74,14 +96,13 @@ class densegraph:
         v = s
         out[s] = True
         while v!=t:
-            for u in range(self.vertex):
-                if self.IsAdjacent(v,u):
-                    tmp = dist[v]+self.GetEdgeWeight(v,u)
-                    if tmp < dist[u]:
-                        dist[u] = tmp
-                        pre[u] = v
-                        if out[u]==False:
-                            pq.DecreaseKey(pointers[u],dist[u])
+            for u in self.edge[v]:
+                tmp = dist[v]+self.GetEdgeWeight(v,u)
+                if tmp < dist[u]:
+                    dist[u] = tmp
+                    pre[u] = v
+                    if out[u]==False:
+                        pq.DecreaseKey(pointers[u],dist[u])
             pq.Delete(pointers[v])
             v = pq.Minimum().value
             out[v]=True
@@ -94,7 +115,7 @@ class densegraph:
         return ans
                         
 def main():
-    a = densegraph(8)
+    a = sparsegraph(8)
     for i in range(8):
         a.SetVertexValue(i,i)
     a.AddEdge(0,1,3);a.AddEdge(0,2,5);a.AddEdge(0,4,6)
@@ -104,7 +125,7 @@ def main():
     a.AddEdge(4,6,4);a.AddEdge(4,7,2)
     a.AddEdge(5,6,2);a.AddEdge(5,7,2)
     a.AddEdge(6,7,1)
-    b = densegraph(6)
+    b = sparsegraph(6)
     b.SetVertexValue(0,'s')
     b.SetVertexValue(1,'b')
     b.SetVertexValue(2,'c')
