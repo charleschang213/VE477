@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{bookmark}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}  
+\usepackage{algorithm}  
+\usepackage{algorithmicx}  
+\usepackage{algpseudocode}
+\pagestyle{headings}
+\markright{\large Zhang Yichi 516370910260\hfill VE477 h6\hfill}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  
+\renewcommand{\algorithmicensure}{\textbf{Output:}}  
+
+\begin{document}
+{\noindent {\bf Ex 1.} 1. The determinant can be expressed as $$\sum_{k_1=1}^n \sum_{k_2=1}^n...\sum_{k_n=1}^n \epsilon_{k_1k_2...k_n} X_{1,k_1}X_{2,k_2}...X_{n,k_n}$$
+
+where $\epsilon$ is 1 when $k_1k_2...k_n$ is an even permutation, -1 if it is an odd permutation and 0 if it is not a permutation.
+
+If determinant is identically 0, it means that for every $X_{1,k_1}X_{2,k_2}...X_{n,k_n}$ where $k_1k_2...k_n$ is a permutation will contain a 0. Since $k_1k_2...k_n$ is a permutation of $1,2...,n$, it means that the matching strategy $1-k_1,2-k_2,...n-k_n$ does not work, and in that case all matching possibilities are excluded, so there is no perfect matching.
+
+If determinant is not identically 0, it means that for at least one permutation $k_1k_2...k_n$, $X_{1,k_1}X_{2,k_2}...X_{n,k_n}$ contains no zero, so there is a matching strategy $1-k_1,2-k_2,...n-k_n$.
+
+In conclusion, the determinant is identically zero if and only if no perfect matching exists.\\
+
+{\noindent 2. The maximum matching algorithm can be used. If the max match is the total number of vertices of a side, it means that the graph has a perfect matching.\\}
+
+{\noindent 3. The complxity should be $\mathcal{O}(|V||E|)$ and since the existence of perfect matching matches the maximum number of matches, the algorithm is correct.\\}
+
+{\noindent 4. It is useful as it is correct and has a reasonable time complexity.\\}
+
+
+\hrule
+
+\vskip 2em
+
+{\noindent {\bf Ex 2.} 1. The algorithm is shown below.}
+
+\begin{algorithm}[H]
+    \caption{Middle Node Finding}  
+    \begin{algorithmic}[1] 
+        \Require A single linked list L
+        \Ensure Its middle node
+        \State $node_{slow}\gets L.head$
+        \State $node_{fast}\gets L.head$
+        \While {$node_{fast}!= L.tail$}
+            \State $node_{slow}\gets node_{slow}.next$
+            \State $node_{fast}\gets node_{fast}.next$
+            \If {$node_{fast}=L.tail$}
+                \State \Return $node_{slow}$
+            \EndIf
+            \State $node_{fast}\gets node_{fast}.next$
+        \EndWhile
+        \State \Return $node_{slow}$
+    \end{algorithmic}  
+\end{algorithm}
+
+{\noindent 2. The algorithm is shown below.}
+
+\begin{algorithm}[H]
+    \caption{Loop Detecting}  
+    \begin{algorithmic}[2] 
+        \Require A single linked list L
+        \Ensure Whether it contains a loop
+        \State $node_{slow}\gets L.head$
+        \State $node_{fast}\gets L.head$
+        \While {$node_{fast}!= L.tail$}
+            \State $node_{slow}\gets node_{slow}.next$
+            \State $node_{fast}\gets node_{fast}.next$
+            \If {$node_{fast}=L.tail$}
+                \State \Return $false$
+            \EndIf
+            \State $node_{fast}\gets node_{fast}.next$
+            \If {$node_{fast}.next=node_{slow}$}
+                \State \Return $true$
+            \EndIf
+        \EndWhile
+        \State \Return $false$
+    \end{algorithmic}  
+\end{algorithm}
+
+\hrule
+\vskip 2em
+
+{\noindent {\bf Ex 3. }1.  Obviously the collector should buy at least $n$ boxes.\\}
+
+{\noindent 3. The expectation can be calculated as $$E[X] = \sum_{k=1}^n\frac{n}{k} = n\sum_{k=1}^n\frac{1}{k}\geq n\int_1^n\frac{1}{x}dx=n\log{n}$$ and as $n\sum_{k=1}^n\frac{1}{k}\leq n\int_1^n\frac{2}{x}dx=2n\log{n}$, it can be concluded that $E[X]=\Theta(n\log{n})$\\}
+
+{\noindent 4. It means that the time does not grow linearly as the nubmer of coupons growing, and the time for colloecting the last few coupons will be much more if $n$ is large.}
+
+
+
+\end{document}
