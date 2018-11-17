@@ -41,16 +41,13 @@ def EK(G,s,t):
 
 
 def main():
-    a = sg.sparsegraph(7)
-    for i in range(7):
-        a.SetVertexValue(i,i)
-    a.AddFlow(0,1,3);a.AddFlow(0,3,3)
-    a.AddFlow(1,2,4)
-    a.AddFlow(2,0,3);a.AddFlow(2,3,1);a.AddFlow(2,4,2)
-    a.AddFlow(3,4,2);a.AddFlow(3,5,6)
-    a.AddFlow(4,6,1);a.AddFlow(4,1,1)
-    a.AddFlow(5,6,9)
-    print(EK(a,0,6))
+    a = sg.sparsegraph(6)
+    a.AddFlow(0,1,10);a.AddFlow(0,3,10)
+    a.AddFlow(1,2,9)
+    a.AddFlow(2,4,6);a.AddFlow(2,5,10)
+    a.AddFlow(3,1,2);a.AddFlow(3,2,8);a.AddFlow(3,4,4)
+    a.AddFlow(4,5,10)
+    print(EK(a,0,5))
 
 if __name__=='__main__':
     main()
