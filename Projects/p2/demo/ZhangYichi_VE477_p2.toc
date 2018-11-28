@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.14pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Fast Fourier Transform}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Cooley-Tukey Algorithm}{7}{0}{2}
+\beamer@sectionintoc {3}{References}{8}{0}{3}

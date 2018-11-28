@@ -1,0 +1,623 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.2.23)  19 NOV 2018 13:32
+entering extended mode
+**d:/academy/VE477/Projects/p2/problem38
+(d:/academy/VE477/Projects/p2/problem38.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(E:\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(E:\CTEX\MiKTeX\tex\latex\base\size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (d:\academy\VE477\Projects\p2\projectalgo.sty
+Package: projectalgo 2015/10/10 ve477 project
+ (E:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+ (E:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+) (E:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+) (E:\CTEX\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+) (E:\CTEX\MiKTeX\tex\generic\oberdiek\etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))) (E:\CTEX\MiKTeX\tex\latex\geometry\geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+) (E:\CTEX\MiKTeX\tex\generic\oberdiek\ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+) (E:\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+ (E:\CTEX\MiKTeX\tex\latex\geometry\geometry.cfg)) (E:\CTEX\MiKTeX\tex\latex\cmbright\cmbright.sty
+Package: cmbright 2005/04/13 v8.1 (WaS)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmbr/m/n on input line 29.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/m/n on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/cmbrm/m/it on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/cmbrm/m/it on input line 30.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmbrm/m/it --> OML/cmbrm/b/it on input line 31.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 32.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/cmbrs/m/n on input line 32.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/cmbrs/m/n on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/cmbr/m/sl on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/cmbr/m/sl on input line 33.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmbr/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtl/m/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtl/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \alpha on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \beta on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \gamma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \delta on input line 40.
+LaTeX Font Info:    Redeclaring math symbol \epsilon on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \zeta on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \eta on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \theta on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \iota on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \kappa on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \lambda on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \mu on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \nu on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \xi on input line 50.
+LaTeX Font Info:    Redeclaring math symbol \pi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \rho on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \sigma on input line 53.
+LaTeX Font Info:    Redeclaring math symbol \tau on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \upsilon on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \phi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \chi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \psi on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \omega on input line 59.
+LaTeX Font Info:    Redeclaring math symbol \varepsilon on input line 60.
+LaTeX Font Info:    Redeclaring math symbol \vartheta on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \varpi on input line 62.
+LaTeX Font Info:    Redeclaring math symbol \varrho on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \varsigma on input line 64.
+LaTeX Font Info:    Redeclaring math symbol \varphi on input line 65.
+LaTeX Info: Redefining \LaTeX on input line 129.
+LaTeX Info: Redefining \LaTeXe on input line 139.
+LaTeX Font Info:    Try loading font information for OT1+cmbr on input line 144.
+ (E:\CTEX\MiKTeX\tex\latex\cmbright\ot1cmbr.fd
+File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
+)) (E:\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2012/02/06 v6.82o Hypertext links for LaTeX
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+\@linkdim=\dimen111
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
+ (E:\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2012/02/06 v6.82o Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count92
+ (E:\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 3925.
+Package hyperref Info: Option `breaklinks' set `true' on input line 3925.
+Package hyperref Info: Hyper figures OFF on input line 4046.
+Package hyperref Info: Link nesting OFF on input line 4051.
+Package hyperref Info: Hyper index ON on input line 4054.
+Package hyperref Info: Plain pages OFF on input line 4061.
+Package hyperref Info: Backreferencing OFF on input line 4066.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4284.
+\c@Hy@tempcnt=\count93
+ (E:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4637.
+\Fld@menulength=\count94
+\Field@Width=\dimen112
+\Fld@charsize=\dimen113
+Package hyperref Info: Hyper figures OFF on input line 5757.
+Package hyperref Info: Link nesting OFF on input line 5762.
+Package hyperref Info: Hyper index ON on input line 5765.
+Package hyperref Info: backreferencing OFF on input line 5772.
+Package hyperref Info: Link coloring ON on input line 5775.
+Package hyperref Info: Link coloring with OCG OFF on input line 5782.
+Package hyperref Info: PDF/A mode OFF on input line 5787.
+LaTeX Info: Redefining \ref on input line 5827.
+LaTeX Info: Redefining \pageref on input line 5831.
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(E:\CTEX\MiKTeX\tex\latex\hyperref\hpdftex.def
+File: hpdftex.def 2012/02/06 v6.82o Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+\c@bookmark@seq@number=\count99
+ (E:\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip43
+) (E:\CTEX\MiKTeX\tex\latex\setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (E:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+ (E:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+ (E:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) (E:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+ (E:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+) (E:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip44
+\subfigcapskip=\skip45
+\subfigcaptopadj=\dimen116
+\subfigbottomskip=\skip46
+\subfigcapmargin=\dimen117
+\subfiglabelskip=\skip47
+\c@subfigure=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@lotdepth=\count104
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(E:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip48
+\subfig@bottom=\skip49
+) (E:\CTEX\MiKTeX\tex\latex\caption\caption.sty
+Package: caption 2011/11/10 v3.2e Customizing captions (AR)
+ (E:\CTEX\MiKTeX\tex\latex\caption\caption3.sty
+Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
+)
+\c@ContinuedFloat=\count105
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+) (E:\CTEX\MiKTeX\tex\latex\tools\multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count106
+\mult@box=\box26
+\multicol@leftmargin=\dimen124
+\c@unbalance=\count107
+\c@collectmore=\count108
+\doublecol@number=\count109
+\multicoltolerance=\count110
+\multicolpretolerance=\count111
+\full@width=\dimen125
+\page@free=\dimen126
+\premulticols=\dimen127
+\postmulticols=\dimen128
+\multicolsep=\skip50
+\multicolbaselineskip=\skip51
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count112
+\c@finalcolumnbadness=\count113
+\last@try=\dimen129
+\multicolovershoot=\dimen130
+\multicolundershoot=\dimen131
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count114
+) (E:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen132
+) (E:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen133
+\lightrulewidth=\dimen134
+\cmidrulewidth=\dimen135
+\belowrulesep=\dimen136
+\belowbottomsep=\dimen137
+\aboverulesep=\dimen138
+\abovetopsep=\dimen139
+\cmidrulesep=\dimen140
+\cmidrulekern=\dimen141
+\defaultaddspace=\dimen142
+\@cmidla=\count115
+\@cmidlb=\count116
+\@aboverulesep=\dimen143
+\@belowrulesep=\dimen144
+\@thisruleclass=\count117
+\@lastruleclass=\count118
+\@thisrulewidth=\dimen145
+) (E:\CTEX\MiKTeX\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count119
+\float@exts=\toks16
+\float@box=\box52
+\@float@everytoks=\toks17
+\@floatcapt=\box53
+) (E:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(E:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+ (E:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen146
+)) (E:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen147
+) (E:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count120
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count121
+\leftroot@=\count122
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count123
+\DOTSCASE@=\count124
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen148
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count125
+\c@MaxMatrixCols=\count126
+\dotsspace@=\muskip11
+\c@parentequation=\count127
+\dspbrk@lvl=\count128
+\tag@help=\toks19
+\row@=\count129
+\column@=\count130
+\maxfields@=\count131
+\andhelp@=\toks20
+\eqnshift@=\dimen149
+\alignsep@=\dimen150
+\tagshift@=\dimen151
+\tagwidth@=\dimen152
+\totwidth@=\dimen153
+\lineht@=\dimen154
+\@envbody=\toks21
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+) (E:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+ (E:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)) (E:\CTEX\MiKTeX\tex\latex\commath\commath.sty (E:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)) (E:\CTEX\MiKTeX\tex\latex\cases\cases.sty
+Package: cases 2002/05/02 ver 2.5 
+) (E:\CTEX\MiKTeX\tex\latex\tools\bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldletters=\mathgroup6
+LaTeX Info: Redefining \bm on input line 204.
+)
+\c@theorem=\count132
+\c@lemma=\count133
+\c@definition=\count134
+ (d:\academy\VE477\Projects\p2\algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count135
+\algocf@hangindent=\skip55
+ (E:\CTEX\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
+Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
+\c@checkoddpage=\count136
+) (E:\CTEX\MiKTeX\tex\latex\tools\xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+) (E:\CTEX\MiKTeX\tex\latex\ltxmisc\relsize.sty
+Package: relsize 2003/07/04 ver 3.1
+)
+\skiptotal=\skip56
+\skiplinenumber=\skip57
+\skiprule=\skip58
+\skiphlne=\skip59
+\skiptext=\skip60
+\skiplength=\skip61
+\algomargin=\skip62
+\skipalgocfslide=\skip63
+\algowidth=\dimen155
+\inoutsize=\dimen156
+\inoutindent=\dimen157
+\interspacetitleruled=\dimen158
+\interspacealgoruled=\dimen159
+\interspacetitleboxruled=\dimen160
+\algocf@ruledwidth=\skip64
+\algocf@inoutbox=\box56
+\algocf@inputbox=\box57
+\AlCapSkip=\skip65
+\AlCapHSkip=\skip66
+\algoskipindent=\skip67
+\algocf@nlbox=\box58
+\algocf@hangingbox=\box59
+\algocf@untilbox=\box60
+\algocf@skipuntil=\skip68
+\algocf@capbox=\box61
+\algocf@lcaptionbox=\skip69
+\algoheightruledefault=\skip70
+\algoheightrule=\skip71
+\algotitleheightruledefault=\skip72
+\algotitleheightrule=\skip73
+\c@algocfline=\count137
+\c@algocfproc=\count138
+\c@algocf=\count139
+\algocf@algoframe=\box62
+\algocf@algobox=\box63
+)) (d:\academy\VE477\Projects\p2\problem38.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03123pt
+* \textheight=652.70622pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box64
+(E:\CTEX\MiKTeX\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+ (E:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Link coloring ON on input line 15.
+ (E:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+ (E:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count140
+)
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
+ (d:\academy\VE477\Projects\p2\problem38.out) (d:\academy\VE477\Projects\p2\problem38.out)
+\@outlinefile=\write3
+ (E:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count141
+\scratchdimen=\dimen161
+\scratchbox=\box65
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen162
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks24
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OMS+cmbr on input line 28.
+ (E:\CTEX\MiKTeX\tex\latex\cmbright\omscmbr.fd
+File: omscmbr.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Try loading font information for OMS+cmbrs on input line 28.
+ (E:\CTEX\MiKTeX\tex\latex\cmbright\omscmbrs.fd
+File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Font shape `OMS/cmbr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `OT1/cmbr/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmbr/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Try loading font information for OML+cmbrm on input line 32.
+ (E:\CTEX\MiKTeX\tex\latex\cmbright\omlcmbrm.fd
+File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
+) [1
+
+{E:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}] <problem38_1.png, id=24, 398.23781pt x 366.61969pt>
+File: problem38_1.png Graphic file (type png)
+ <use problem38_1.png>
+Package pdftex.def Info: problem38_1.png used on input line 66.
+(pdftex.def)             Requested size: 199.11841pt x 183.30939pt.
+ [2 <d:/academy/VE477/Projects/p2/problem38_1.png>]
+
+LaTeX Font Warning: Font shape `OT1/cmbr/bx/n' in size <7> not available
+(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 93.
+
+LaTeX Font Info:    Font shape `OT1/cmbr/m/it' in size <7> not available
+(Font)              Font shape `OT1/cmbr/m/sl' tried instead on input line 93.
+LaTeX Font Info:    Font shape `OT1/cmbr/m/it' in size <5> not available
+(Font)              Font shape `OT1/cmbr/m/sl' tried instead on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+cmtl on input line 122.
+(E:\CTEX\MiKTeX\tex\latex\cmbright\ot1cmtl.fd
+File: ot1cmtl.fd 2005/04/13 v8.1 (WaS)
+)
+Overfull \hbox (4.96486pt too wide) in paragraph at lines 122--123
+[][][]$\OT1/cmtl/m/n/10 https : / / www . cs . cmu . edu / afs / andrew / scs / cs / 15-[]463 / 2001 / pub / www / notes / fourier / fourier . pdf$[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+ (d:\academy\VE477\Projects\p2\problem38.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+Package rerunfilecheck Info: File `problem38.out' has not changed.
+(rerunfilecheck)             Checksum: 749F1E6CC401760399C8FC4A32F72332;66.
+ )
+(\end occurred when \ifx on line 127 was incomplete) 
+Here is how much of TeX's memory you used:
+ 8789 strings out of 495354
+ 129140 string characters out of 3183859
+ 236200 words of memory out of 3000000
+ 11794 multiletter control sequences out of 15000+200000
+ 11820 words of font info for 43 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 43i,18n,40p,914b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbr10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbr8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrbx10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrmi10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrmi8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrsl10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrsy10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hfbrsy8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/hfbright/hftl10.pfb>
+Output written on problem38.pdf (3 pages, 165457 bytes).
+PDF statistics:
+ 99 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+
