@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.2.23)  28 NOV 2018 16:07
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.2.23)  28 NOV 2018 19:51
 entering extended mode
 **d:/academy/VE477/Projects/p2/demo/ZhangYichi_VE477_p2
 (d:/academy/VE477/Projects/p2/demo/ZhangYichi_VE477_p2.tex
@@ -747,15 +747,17 @@ Overfull \vbox (7.81981pt too high) detected at line 88
 
  <d:/academy/VE477/Projects/p2/problem38_1.png>] [8
 
+] [9
+
 ]
 \tf@nav=\write5
 \tf@toc=\write6
 \tf@snm=\write7
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
  (d:\academy\VE477\Projects\p2\demo\ZhangYichi_VE477_p2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 101.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 111.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -763,19 +765,17 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 16905 strings out of 495354
- 309302 string characters out of 3183859
+ 16906 strings out of 495354
+ 309308 string characters out of 3183859
  386527 words of memory out of 3000000
  19665 multiletter control sequences out of 15000+200000
  11037 words of font info for 41 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,16n,64p,460b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Navigation9} has been referenced but does not exist, replaced by a fixed one
-
 <E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ZhangYichi_VE477_p2.pdf (8 pages, 206155 bytes).
+Output written on ZhangYichi_VE477_p2.pdf (9 pages, 213757 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  70 words of extra memory for PDF output out of 10000 (max. 10000000)
 

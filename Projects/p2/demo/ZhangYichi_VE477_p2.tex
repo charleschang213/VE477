@@ -87,6 +87,16 @@ commentstyle=\color{red!80!green!80!blue!80},
 	
 \end{frame}
 
+\begin{frame}
+    \frametitle{Discussion on Bitwise Reverse}
+    The most naive method in bitwise reverse is iteratively divide the number by 2 to get all the bits. In this way reversing one number should be $\mathcal{O}(\log{n})$ complexity. 
+
+    I found that when the number of bits is a power of 2, this can do it in the way of flipping every adjacent 2,4,...,n/2 bits to reverse it.
+
+    So the algorithm I am using now is to find the smallest 2-power number larer than the number of bits now, flipping in that way then right shift the extra 0s in the end.
+	
+\end{frame}
+
 
 \begin{frame}
 	\section{References}

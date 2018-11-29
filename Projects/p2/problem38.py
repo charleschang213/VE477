@@ -3,11 +3,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def bitreverse(n,s):
-    a = 0
-    for i in range(s):
-        a = a*2+n%2
-        n = math.floor(n/2)
-    return a
+    left = [0x55555555,0x33333333,0x0f0f0f0f,0x00ff00ff,0x0000ffff]
+    right = [0xaaaaaaaa,0xcccccccc,0xf0f0f0f0,0xff00ff00,0xffff0000]
+    a = n
+    shifts = math.ceil(math.log2(s))
+    for i in range(shifts):
+        a = ((a&right[i]) >> (1<<i)) | ((a&left[i]) << (1<<i))
+    
+    return a >> ((1<<shifts)-s)
 
 def CooleyTukey(f):
     n = len(f)
@@ -23,8 +26,8 @@ def CooleyTukey(f):
     return F
 
 def main():
-    param = 32
-    f = [math.sin(0.2*math.pi*i) for i in range(param)]
+    param = 64
+    f = [math.sin(0.1*math.pi*i) for i in range(param)]
     F = CooleyTukey(f)
     mode = [abs(F[i]) for i in range(param)]
     deg = [math.atan(F[i].imag/F[i].real)/math.pi*180 for i in range(param)]
